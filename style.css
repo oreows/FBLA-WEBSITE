@@ -281,3 +281,90 @@
     font-style: italic;
     font-family: "Cormorant";
   }
+
+  *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  body{
+      background-color: #0a0a0a;
+  }
+  nav{
+      height: 100vh;
+      width: 70vw;
+      min-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: auto;
+  }
+
+  z{
+      position: relative;
+      text-decoration: none;
+      font-family: 'Times New Roman';
+      color: #a0a0a0;
+      font-size: 50px;
+      letter-spacing: 0.5px;
+      padding: 0 10px;
+  }
+  z:after{
+      content: "";
+      position: absolute;
+      background-color: #ffffff;
+      height: 3px;
+      width: 0;
+      left: 0;
+      bottom: -10px;
+      transition: 0.3s;
+  }
+  z:hover{
+      color: #ffffff;
+  }
+  z:hover:after{
+      width: 100%;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  hireSection{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Times New Roman';
+    color: #000000;
+    font-size: 60px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+  /* .blf {
+    background-color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 5000px;
+    transition: all 0.3s;
+  }
+  .blf:hover {
+    transform: scale(1.15);
+  } */
+
