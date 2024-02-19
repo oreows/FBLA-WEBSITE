@@ -354,6 +354,23 @@
     letter-spacing: 0.5px;
     padding: 0 10px;
 }
+
+hireDescription{
+  position: relative;
+  text-decoration: none;
+  font-family: 'Verdana';
+  color: #a0a0a0;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+.footer{
+  background-color: #000000;
+}
+.container12{
+  color:white;
+}
   /* .blf {
     background-color: #000000;
     font-size: 12px;
