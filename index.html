@@ -94,39 +94,39 @@
           <div class="menu">
             <ul>
               <li>
-                <a>
-                  <z href="#home">Home</z>
-                </a>
+                <z>
+                  <a href="#home">Home</a>
+                </z>
               </li>
               <li>
-                <a>
-                  <z href="#about">About</z>
-                </a>
+                <z>
+                  <a href="#about">About</a>
+                </z>
               </li>
               <li>
-                <a>
-                  <z href="#projects">Projects</z>
-                </a>
+                <z>
+                  <a href="#projects">Projects</a>
+                </z>
               </li>
               <li>
-                <a>
-                  <z href="#contact">Contact</z>
-                </a>
+                <z>
+                  <a href="#contact">Contact</a>
+                </z>
               </li>
               <li>
                 <z>
                   <a href="apply.html">hire</a>
+                  </z>
+              </li>
+              <li>
+                <z>
+                  <a href="sale.html">for sale</a>
                 </z>
               </li>
               <li>
-                <a>
-                  <z href="sale.html">for sale</z>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <z href="#contact">Book now</z>
-                </a>
+                <z>
+                  <a href="#contact">Book now</a>
+                </z>
               </li>
             </ul>
           </div>
@@ -232,7 +232,7 @@
               <p class="wow fadeInUp" data-wow-delay="0.5s">
                 Are you ready to capture life's most precious moments, your car, or nature in stunning clarity? <br> Book your consultation now and let us turn your vision into reality.
               </p>
-              <a onclick="window.location.href='mailto:ga.photographyca@gmail.com'" class="button">Email Me</a>
+              <a onclick="window.location.href='mailto:gautam.arunkuamr1908@gmail.com'" class="button">Email Me</a>
             </div>
           </div>
           <div class="col-lg-12 text-left">
@@ -450,7 +450,12 @@
         { y: 100, opacity: 0, ease: Expo.easeOut },
         0.1
       );
-
+      // The fix
+      $(document).on("click", function(event) {
+      if ($(event.target).closest('.menu').length || $(event.target).hasClass('menu-toggle')) {
+      t1.reversed(!t1.reversed());
+      }
+      });
       t1.reverse();
       $(document).on("click", ".menu-toggle", function() {
         t1.reversed(!t1.reversed());
@@ -460,10 +465,10 @@
         t1.reversed(!t1.reversed());
       });
 
-      t1.reverse();
-      $(document).on("click", "li", function() {
-        t1.reversed(!t1.reversed());
-      });
+      // t1.reverse();
+      // $(document).on("click", "li", function() {
+      //   t1.reversed(!t1.reversed());
+      // });
 
       var image = document.getElementsByClassName("hero-img-parallax");
       new simpleParallax(image, {
