@@ -94,38 +94,28 @@
           <div class="menu">
             <ul>
               <li>
-                <z>
-                  <a href="#home">Home</a>
-                </z>
+                <a>
+                  <z href="#home">Home</z>
+                </a>
               </li>
               <li>
-                <z>
-                  <a href="#about">About</a>
-                </z>
+                <a>
+                  <z href="#about">About</z>
+                </a>
               </li>
               <li>
-                <z>
-                  <a href="#projects">Projects</a>
-                </z>
+                <a>
+                  <z href="#projects">Projects</z>
+                </a>
               </li>
               <li>
-                <z>
-                  <a href="#contact">Contact</a>
-                </z>
+                <a>
+                  <z href="#contact">Contact</z>
+                </a>
               </li>
               <li>
                 <z>
                   <a href="apply.html">hire</a>
-                  </z>
-              </li>
-              <li>
-                <z>
-                  <a href="sale.html">for sale</a>
-                </z>
-              </li>
-              <li>
-                <z>
-                  <a href="#contact">Book now</a>
                 </z>
               </li>
             </ul>
@@ -232,7 +222,7 @@
               <p class="wow fadeInUp" data-wow-delay="0.5s">
                 Are you ready to capture life's most precious moments, your car, or nature in stunning clarity? <br> Book your consultation now and let us turn your vision into reality.
               </p>
-              <a onclick="window.location.href='mailto:gautam.arunkuamr1908@gmail.com'" class="button">Email Me</a>
+              <button href="mailto:your-email@example.com" class="button">Email Me</button>   
             </div>
           </div>
           <div class="col-lg-12 text-left">
@@ -450,12 +440,7 @@
         { y: 100, opacity: 0, ease: Expo.easeOut },
         0.1
       );
-      // The fix
-      $(document).on("click", function(event) {
-      if ($(event.target).closest('.menu').length || $(event.target).hasClass('menu-toggle')) {
-      t1.reversed(!t1.reversed());
-      }
-      });
+
       t1.reverse();
       $(document).on("click", ".menu-toggle", function() {
         t1.reversed(!t1.reversed());
@@ -465,10 +450,10 @@
         t1.reversed(!t1.reversed());
       });
 
-      // t1.reverse();
-      // $(document).on("click", "li", function() {
-      //   t1.reversed(!t1.reversed());
-      // });
+      t1.reverse();
+      $(document).on("click", "li", function() {
+        t1.reversed(!t1.reversed());
+      });
 
       var image = document.getElementsByClassName("hero-img-parallax");
       new simpleParallax(image, {
@@ -505,43 +490,48 @@
         scale: 1.3
       });
 
-      // Select only anchor links with hashes
-$('a[href^="#"]').click(function(event) {
-  // On-page links
-  if (
-    location.pathname.replace(/^\//, "") ==
-      this.pathname.replace(/^\//, "") &&
-    location.hostname == this.hostname
-  ) {
-    // Figure out element to scroll to
-    var target = $(this.hash);
-    target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
-    // Does a scroll target exist?
-    if (target.length) {
-      // Only prevent default if animation is actually gonna happen
-      event.preventDefault();
-      $("html, body").animate(
-        {
-          scrollTop: target.offset().top
-        },
-        1000,
-        function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) {
-            // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+      // Select all links with hashes
+      $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, "") ==
+              this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length
+              ? target
+              : $("[name=" + this.hash.slice(1) + "]");
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $("html, body").animate(
+                {
+                  scrollTop: target.offset().top
+                },
+                1000,
+                function() {
+                  // Callback after animation
+                  // Must change focus!
+                  var $target = $(target);
+                  $target.focus();
+                  if ($target.is(":focus")) {
+                    // Checking if the target was focused
+                    return false;
+                  } else {
+                    $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                  }
+                }
+              );
+            }
           }
-        }
-      );
-    }
-  }
-});
+        });
     </script>
   </body>
 </html>
