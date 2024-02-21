@@ -5,7 +5,7 @@ $email = $_POST["contact-email"];
 $reason = $_POST["contact-project"];
 $resume = $_FILES["resume"]; // Name of the resume file
 $portfolio = $_FILES["portfolio"]; // Name of the portfolio file
-
+//action="process-form.php" method="post"
 if ( ! $terms) {
     die("Terms must be accepted");
 }   
