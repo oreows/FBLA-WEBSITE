@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ga.Phtography</title>
+    <title>Ga.Photography</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="random.js"></script>
 
 
     <!-- ANIMEJS -->
@@ -88,7 +89,7 @@
         <div class="hero-title">
           <h1>GA.PHOTOGRAPHY</h1>
         </div>
-        <div class="overlay">
+        <div class="overlay" id = "overlay-id" style = "visibility: hidden;">
           <div class="close-btn">
             <ion-icon name="close"></ion-icon>
           </div>
@@ -357,19 +358,27 @@
         { y: 100, opacity: 0, ease: Expo.easeOut },
         0.1
       );
+      
       // The fix
       $(document).on("click", function(event) {
       if ($(event.target).closest('.menu').length || $(event.target).hasClass('menu-toggle')) {
-      t1.reversed(!t1.reversed());
+      t1.reversed(!t1.reversed())
+        // When x button is pressed, turn off menu
+          document.getElementById("overlay-id").style.visibility = "hidden";
       }
       });
       t1.reverse();
       $(document).on("click", ".menu-toggle", function() {
         t1.reversed(!t1.reversed());
+        // When menu is pressed, turn on menu
+        document.getElementById("overlay-id").style.visibility = "visible";
       });
 
       $(document).on("click", ".close-btn", function() {
         t1.reversed(!t1.reversed());
+        document.getElementById("overlay-id").style.visibility = "hidden";
+        onComplete(function() {
+        });
       });
 
       // t1.reverse();
