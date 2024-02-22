@@ -72,7 +72,7 @@ nav {
       width: 100%;
       background: #0f0f0f;
       height: 80px;
-      position: fixed;
+      position: absolute;
       z-index: 1;
 }
 
@@ -96,7 +96,7 @@ nav #brand a:hover {
 nav #menu {
       float: left;
       right: 80px;
-      position: fixed;
+      position: absolute;
 }
 
 nav #menu li {

@@ -3,12 +3,9 @@ $position = $_POST["fav_language"];
 $name = $_POST["contact-name"];
 $email = $_POST["contact-email"];
 $reason = $_POST["contact-project"];
-$resume = $_FILES["resume"]; // Name of the resume file
-$portfolio = $_FILES["portfolio"]; // Name of the portfolio file
+$resume = $_FILES["resume"]; 
+$portfolio = $_FILES["portfolio"];
 //action="process-form.php" method="post"
-if ( ! $terms) {
-    die("Terms must be accepted");
-}   
 
 $host = "localhost";
 $dbname = "message_db";
