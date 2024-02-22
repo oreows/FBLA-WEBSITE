@@ -372,6 +372,7 @@
         t1.reversed(!t1.reversed());
         // When menu is pressed, turn on menu
         document.getElementById("overlay-id").style.visibility = "visible";
+        window.scrollTo({top: 0, behavior: 'smooth'});
       });
 
       $(document).on("click", ".close-btn", function() {
